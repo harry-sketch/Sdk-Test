@@ -7,7 +7,7 @@ type Props = {
 };
 
 export default function Home({ token }: Props) {
-  const { joinRoom } = useRoom();
+  const { joinRoom, state } = useRoom();
 
   const handleJoinRoom = async () => {
     await joinRoom({
@@ -18,6 +18,7 @@ export default function Home({ token }: Props) {
 
   return (
     <main className="">
+      <div>state: {state}</div>
       <button type="button" onClick={handleJoinRoom}>
         Join Room
       </button>

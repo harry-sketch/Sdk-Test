@@ -6,14 +6,14 @@ settings:
 
 dependencies:
   '@huddle01/react':
-    specifier: 1.0.0-alpha.57
-    version: 1.0.0-alpha.57(@types/react@18.2.42)(react-dom@18.2.0)
+    specifier: 1.0.0-alpha.58
+    version: 1.0.0-alpha.58(@types/react@18.2.42)(react-dom@18.2.0)
   '@huddle01/server-sdk':
     specifier: 1.0.0-alpha.25
     version: 1.0.0-alpha.25
   '@huddle01/web-core':
-    specifier: 1.0.0-alpha.54
-    version: 1.0.0-alpha.54
+    specifier: 1.0.0-alpha.55
+    version: 1.0.0-alpha.55
   next:
     specifier: 14.0.3
     version: 14.0.3(react-dom@18.2.0)(react@18.2.0)
@@ -83,10 +83,10 @@ packages:
       regenerator-runtime: 0.14.0
     dev: false
 
-  /@huddle01/react@1.0.0-alpha.57(@types/react@18.2.42)(react-dom@18.2.0):
-    resolution: {integrity: sha512-LZTo8DPabfRBjcFcj6N1rWuIexK967wR6O0sLAg8NbaB25pgiAXA/n0fqk/GVZrOmxQyEfdSUgkLTwM+iijfGA==}
+  /@huddle01/react@1.0.0-alpha.58(@types/react@18.2.42)(react-dom@18.2.0):
+    resolution: {integrity: sha512-SlUVIEUWuxUc0HFyN2gGBhIxrZYs7AK+xIH6qxYE/oTilSEfcrTd3DCkfcLzj1PiMPfR+/WX2bXx4USau7Wnpg==}
     dependencies:
-      '@huddle01/web-core': 1.0.0-alpha.54
+      '@huddle01/web-core': 1.0.0-alpha.55
       '@tanstack/react-query': 4.36.1(react-dom@18.2.0)(react@18.2.0)
       '@testing-library/react': 14.1.2(react-dom@18.2.0)(react@18.2.0)
       '@testing-library/react-hooks': 8.0.1(@types/react@18.2.42)(react-dom@18.2.0)(react@18.2.0)
@@ -110,8 +110,8 @@ packages:
       - debug
     dev: false
 
-  /@huddle01/web-core@1.0.0-alpha.54:
-    resolution: {integrity: sha512-phoScRHUgksPGZp57bXBVeBNe1DM8ZJZ/pBUYHOn6S+3y08EISwMoM6pRZi0lL/wGwb9rKSqrdw4jDNZa4CQkQ==}
+  /@huddle01/web-core@1.0.0-alpha.55:
+    resolution: {integrity: sha512-XePIF1VxQF5IQ1QpIKXg/k3aVHrAHKCVW/3pRTs1iZo9gf5QF2bT9VGZLbw9yBatN2+0ROQBv1fTYvd1a0BM0w==}
     dependencies:
       mediasoup-client: 3.7.0
       tslog: 4.9.2

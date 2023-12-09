@@ -9,9 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@huddle01/react": "1.0.0-alpha.57",
+    "@huddle01/react": "1.0.0-alpha.58",
     "@huddle01/server-sdk": "1.0.0-alpha.25",
-    "@huddle01/web-core": "1.0.0-alpha.54",
+    "@huddle01/web-core": "1.0.0-alpha.55",
     "next": "14.0.3",
     "react": "^18",
     "react-dom": "^18"
