@@ -9,9 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@huddle01/react": "1.0.0-alpha.58",
-    "@huddle01/server-sdk": "1.0.0-alpha.25",
-    "@huddle01/web-core": "1.0.0-alpha.55",
+    "@huddle01/react": "alpha",
+    "@huddle01/server-sdk": "alpha",
+    "@huddle01/web-core": "alpha",
+    "@mediapipe/camera_utils": "^0.3.1675466862",
+    "@mediapipe/face_mesh": "^0.4.1633559619",
     "next": "14.0.3",
     "react": "^18",
     "react-dom": "^18"

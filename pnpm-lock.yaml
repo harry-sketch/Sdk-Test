@@ -6,14 +6,20 @@ settings:
 
 dependencies:
   '@huddle01/react':
-    specifier: 1.0.0-alpha.58
-    version: 1.0.0-alpha.58(@types/react@18.2.42)(react-dom@18.2.0)
+    specifier: alpha
+    version: 1.0.0-alpha.65(@types/react@18.2.42)(react-dom@18.2.0)
   '@huddle01/server-sdk':
-    specifier: 1.0.0-alpha.25
+    specifier: alpha
     version: 1.0.0-alpha.25
   '@huddle01/web-core':
-    specifier: 1.0.0-alpha.55
-    version: 1.0.0-alpha.55
+    specifier: alpha
+    version: 1.0.0-alpha.61
+  '@mediapipe/camera_utils':
+    specifier: ^0.3.1675466862
+    version: 0.3.1675466862
+  '@mediapipe/face_mesh':
+    specifier: ^0.4.1633559619
+    version: 0.4.1633559619
   next:
     specifier: 14.0.3
     version: 14.0.3(react-dom@18.2.0)(react@18.2.0)
@@ -83,10 +89,10 @@ packages:
       regenerator-runtime: 0.14.0
     dev: false
 
-  /@huddle01/react@1.0.0-alpha.58(@types/react@18.2.42)(react-dom@18.2.0):
-    resolution: {integrity: sha512-SlUVIEUWuxUc0HFyN2gGBhIxrZYs7AK+xIH6qxYE/oTilSEfcrTd3DCkfcLzj1PiMPfR+/WX2bXx4USau7Wnpg==}
+  /@huddle01/react@1.0.0-alpha.65(@types/react@18.2.42)(react-dom@18.2.0):
+    resolution: {integrity: sha512-94HjonVe8Lkb7B5qltOQzmC0EJ0FExPNpiMfvtiok0fOI+lgQm8HvFepcDtvMpLlxhbel4tK0XthnV0OtUGtVg==}
     dependencies:
-      '@huddle01/web-core': 1.0.0-alpha.55
+      '@huddle01/web-core': 1.0.0-alpha.60
       '@tanstack/react-query': 4.36.1(react-dom@18.2.0)(react@18.2.0)
       '@testing-library/react': 14.1.2(react-dom@18.2.0)(react@18.2.0)
       '@testing-library/react-hooks': 8.0.1(@types/react@18.2.42)(react-dom@18.2.0)(react@18.2.0)
@@ -110,8 +116,16 @@ packages:
       - debug
     dev: false
 
-  /@huddle01/web-core@1.0.0-alpha.55:
-    resolution: {integrity: sha512-XePIF1VxQF5IQ1QpIKXg/k3aVHrAHKCVW/3pRTs1iZo9gf5QF2bT9VGZLbw9yBatN2+0ROQBv1fTYvd1a0BM0w==}
+  /@huddle01/web-core@1.0.0-alpha.60:
+    resolution: {integrity: sha512-tG5nvVLYQB4y2bQ9fBxnpDtra2qN+C0Pp9rLKX/1+1utGtzkjQZF+LoE2O0F76rn3Uj+Hr4auuLTfYFALqnuZw==}
+    dependencies:
+      mediasoup-client: 3.7.0
+      tslog: 4.9.2
+      zod: 3.22.4
+    dev: false
+
+  /@huddle01/web-core@1.0.0-alpha.61:
+    resolution: {integrity: sha512-E4TbhmpSSYNMYOOUau5Qfh3tQsOz7CWEe4us/7HNK9qOuLY3ngWjq58JEjP6SXIgofUur4cRF1edBWIUJ+UdKw==}
     dependencies:
       mediasoup-client: 3.7.0
       tslog: 4.9.2
@@ -147,6 +161,14 @@ packages:
       '@jridgewell/resolve-uri': 3.1.1
       '@jridgewell/sourcemap-codec': 1.4.15
     dev: true
+
+  /@mediapipe/camera_utils@0.3.1675466862:
+    resolution: {integrity: sha512-siuXBoUxWo9WL0MeAxIxvxY04bvbtdNl7uCxoJxiAiRtNnCYrurr7Vl5VYQ94P7Sq0gVq6PxIDhWWeZ/pLnSzw==}
+    dev: false
+
+  /@mediapipe/face_mesh@0.4.1633559619:
+    resolution: {integrity: sha512-Vc8cdjxS5+O2gnjWH9KncYpUCVXT0h714KlWAsyqJvJbIgUJBqpppbIx8yWcAzBDxm/5cYSuBI5p5ySIPxzcEg==}
+    dev: false
 
   /@next/env@14.0.3:
     resolution: {integrity: sha512-7xRqh9nMvP5xrW4/+L0jgRRX+HoNRGnfJpD+5Wq6/13j3dsdzxO3BCXn7D3hMqsDb+vjZnJq+vI7+EtgrYZTeA==}

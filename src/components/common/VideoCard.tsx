@@ -37,7 +37,7 @@ const VideoCard: React.FC<Props> = ({ stream, isMe }) => {
       ref={videoRef}
       autoPlay
       muted
-      className="animate-opacity-show z-20 h-full aspect-video w-full rounded-lg shadow-md"
+      className="animate-opacity-show z-20 aspect-video w-full rounded-lg shadow-md"
     />
   );
 };

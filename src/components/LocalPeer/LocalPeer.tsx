@@ -10,7 +10,7 @@ const LocalPeer: React.FC<LocalPeerProps> = () => {
 
   return (
     stream && (
-      <div className="border h-96 w-96">
+      <div className="h-full w-full">
         <VideoCard stream={stream} isMe />
       </div>
     )

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import LocalPeer from "../LocalPeer/LocalPeer";
 import RemotePeer from "../RemotePeer/RemotePeer";
 import {
@@ -26,39 +26,18 @@ const View: React.FC<ViewProps> = () => {
     });
   };
 
-  const handleAudio = async () => {
-    await enableAudio().catch((error) => {
-      console.log({ error });
-    });
-  };
+  useEffect(() => {
+    handleVideo();
+  }, []);
 
-  const handledisableAudio = async () => {
-    await disableAudio().catch((error) => {
-      console.error({ error });
-    });
-  };
   return (
-    <div>
-      <button
-        type="button"
-        onClick={() => (stream ? handleDisableVideo() : handleVideo())}
-      >
-        {stream ? "Disable Video" : "Enable Video"}
-      </button>
-
-      <br />
-      <button
-        type="button"
-        onClick={() => (isAudioOn ? handledisableAudio() : handleAudio())}
-      >
-        {isAudioOn ? "disable Audio" : "enable Audio"}
-      </button>
-
-      <div className="h-96 w-96">
+    <div className="w-full">
+      <div className="w-full p-4 h-full">
         <LocalPeer />
-        {peerIds.map((peerId) => (
+
+        {/* {peerIds.map((peerId) => (
           <RemotePeer peerId={peerId} key={`remote-peer-${peerId}`} />
-        ))}
+        ))} */}
       </div>
     </div>
   );
