@@ -6,23 +6,17 @@ import {
   useLocalVideo,
   usePeerIds,
 } from "@huddle01/react/hooks";
+import { Euler } from "three";
 
 type ViewProps = {};
 
-const View: React.FC<ViewProps> = () => {
-  const { peerIds } = usePeerIds();
-  const { enableVideo, stream, disableVideo } = useLocalVideo();
-  const { enableAudio, disableAudio, isAudioOn } = useLocalAudio();
+const View: React.FC<ViewProps> = ({}) => {
+  // const { peerIds } = usePeerIds();
+  const { enableVideo } = useLocalVideo();
 
   const handleVideo = async () => {
     await enableVideo().catch((error) => {
       console.log({ error });
-    });
-  };
-
-  const handleDisableVideo = async () => {
-    await disableVideo().catch((error) => {
-      console.error({ error });
     });
   };
 
