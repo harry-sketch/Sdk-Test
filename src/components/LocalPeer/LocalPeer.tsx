@@ -1,8 +1,7 @@
-import { useLocalAudio, useLocalVideo } from "@huddle01/react/hooks";
+import { useLocalVideo } from "@huddle01/react/hooks";
 import React from "react";
 import VideoCard from "../common/VideoCard";
 import AudioCard from "../common/AudioCard";
-import { Euler } from "three";
 
 type LocalPeerProps = {};
 

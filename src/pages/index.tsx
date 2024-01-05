@@ -1,10 +1,5 @@
 import View from "@/components/View/View";
 
-import { useGLTF } from "@react-three/drei";
-import { useFrame, useGraph } from "@react-three/fiber";
-import { useEffect, useState } from "react";
-import { Euler } from "three";
-
 type Props = {
   token: string;
 };
