@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { AccessToken, Role } from "@huddle01/server-sdk/auth";
 import { GetServerSidePropsContext } from "next";
 import { useRouter } from "next/router";
-import { useRoom } from "@huddle01/react/hooks";
+import { useLocalPeer, useRoom } from "@huddle01/react/hooks";
 import { cn } from "@/utils/helpers";
 import useStore from "@/store";
 
@@ -13,6 +13,8 @@ type lobbyProps = {
 const lobby: React.FC<lobbyProps> = ({ token }) => {
   const { push, query } = useRouter();
 
+  const { updateMetadata } = useLocalPeer();
+
   const displayName = useStore((state) => state.name);
 
   const setDisplayName = useStore((state) => state.setName);
@@ -22,6 +24,7 @@ const lobby: React.FC<lobbyProps> = ({ token }) => {
   const { joinRoom } = useRoom({
     onJoin: () => {
       push(`/${query.roomId}`);
+      updateMetadata({ displayName });
     },
   });
 
