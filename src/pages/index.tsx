@@ -1,48 +1,28 @@
-import View from "@/components/View/View";
-
-type Props = {
-  token: string;
-};
-
-export default function Home({ token }: Props) {
-  return (
-    <main className="">
-      <View />
-    </main>
-  );
+export default function Home() {
+  return null;
 }
 
-// export const getServerSideProps = async () => {
-//   const accessToken = new AccessToken({
-//     apiKey: "Lvtt3L8xT6UhlFLjGlyAgXVd7IF2-TzF",
-//     roomId: "fge-bxdp-hwr",
-//     role: Role.HOST,
-//     permissions: {
-//       admin: true,
-//       canConsume: true,
-//       canProduce: true,
-//       canProduceSources: {
-//         cam: true,
-//         mic: true,
-//         screen: true,
-//       },
-//       canRecvData: true,
-//       canSendData: true,
-//       canUpdateMetadata: true,
-//     },
-//     options: {
-//       metadata: {
-//         // you can add any custom attributes here which you want to associate with the user
-//         walletAddress: "harsh",
-//       },
-//     },
-//   });
+export const getServerSideProps = async () => {
+  const response = await fetch("https://api.huddle01.com/api/v1/create-room", {
+    method: "POST",
+    body: JSON.stringify({
+      title: "Huddle01-room",
+    }),
+    headers: {
+      "Content-type": "application/json",
+      "x-api-key": process.env.API_KEY!,
+    },
+  });
 
-//   const token = await accessToken.toJwt();
+  const data = await response.json();
+  const roomId = data.data.roomId;
 
-//   console.log({ token });
+  console.log(roomId);
 
-//   return {
-//     props: { token },
-//   };
-// };
+  return {
+    redirect: {
+      destination: `/${roomId}/lobby`,
+      permanent: false,
+    },
+  };
+};
