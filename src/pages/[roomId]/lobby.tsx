@@ -13,7 +13,7 @@ type lobbyProps = {
 const lobby: React.FC<lobbyProps> = ({ token }) => {
   const { push, query } = useRouter();
 
-  const { updateMetadata } = useLocalPeer();
+  const { updateMetadata } = useLocalPeer<{ displayName: string }>();
 
   const displayName = useStore((state) => state.name);
 
@@ -42,7 +42,7 @@ const lobby: React.FC<lobbyProps> = ({ token }) => {
 
   return (
     <main className="flex items-center justify-center flex-col h-screen">
-      <h1>not Complete Yet 🤪 !!</h1>
+      <h1>not Completed Yet 🤪 !!</h1>
       <input
         value={displayName}
         onChange={(e) => setDisplayName(e.target.value)}

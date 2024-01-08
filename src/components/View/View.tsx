@@ -9,6 +9,9 @@ type ViewProps = {};
 const View: React.FC<ViewProps> = ({}) => {
   const { peerIds } = usePeerIds();
 
+  const enableCanvas = useStore((state) => state.enableCanvas);
+  const setEnableCanvas = useStore((state) => state.setEnableCanvas);
+
   const { metadata } = useLocalPeer<{
     displayName: string;
   }>();
@@ -28,6 +31,10 @@ const View: React.FC<ViewProps> = ({}) => {
   return (
     <div className="w-full">
       <h1>{metadata?.displayName}</h1>
+
+      <button type="button" onClick={() => setEnableCanvas(!enableCanvas)}>
+        Enable Canvas
+      </button>
       <div className="">
         <LocalPeer />
 
