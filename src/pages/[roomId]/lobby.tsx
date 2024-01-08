@@ -4,6 +4,7 @@ import { GetServerSidePropsContext } from "next";
 import { useRouter } from "next/router";
 import { useRoom } from "@huddle01/react/hooks";
 import { cn } from "@/utils/helpers";
+import useStore from "@/store";
 
 type lobbyProps = {
   token: string;
@@ -11,7 +12,11 @@ type lobbyProps = {
 
 const lobby: React.FC<lobbyProps> = ({ token }) => {
   const { push, query } = useRouter();
-  const [name, setName] = useState("");
+
+  const displayName = useStore((state) => state.name);
+
+  const setDisplayName = useStore((state) => state.setName);
+
   const inputRef = useRef<null | HTMLInputElement>(null);
 
   const { joinRoom } = useRoom({
@@ -36,8 +41,8 @@ const lobby: React.FC<lobbyProps> = ({ token }) => {
     <main className="flex items-center justify-center flex-col h-screen">
       <h1>not Complete Yet 🤪 !!</h1>
       <input
-        value={name}
-        onChange={(e) => setName(e.target.value)}
+        value={displayName}
+        onChange={(e) => setDisplayName(e.target.value)}
         type="text"
         ref={inputRef}
         className={cn(
