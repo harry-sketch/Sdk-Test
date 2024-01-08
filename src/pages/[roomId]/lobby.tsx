@@ -33,14 +33,15 @@ const lobby: React.FC<lobbyProps> = ({ token }) => {
   }, []);
 
   return (
-    <main className="flex items-center justify-center flex-col  h-screen">
+    <main className="flex items-center justify-center flex-col h-screen">
+      <h1>not Complete Yet 🤪 !!</h1>
       <input
         value={name}
         onChange={(e) => setName(e.target.value)}
         type="text"
         ref={inputRef}
         className={cn(
-          "text-black rounded-md py-2 px-4 w-96 border-none outline-none focus:outline-blue-500"
+          "text-black rounded-md py-2 px-4 w-96 border-none outline-none focus:outline-blue-500 my-4"
         )}
         placeholder="Enter your name please..."
       />
@@ -48,7 +49,7 @@ const lobby: React.FC<lobbyProps> = ({ token }) => {
       <button
         onClick={handleJoin}
         type="button"
-        className="py-2 px-4 mt-4 w-80 bg-blue-500 rounded-md"
+        className="py-2 px-4 w-80 bg-blue-500 rounded-md"
       >
         Join Room
       </button>

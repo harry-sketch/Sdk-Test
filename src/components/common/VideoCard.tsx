@@ -153,29 +153,26 @@ const VideoCard: React.FC<Props> = ({ stream, isMe }) => {
         autoPlay
         muted
         className={cn(
-          "animate-opacity-show z-20 aspect-video w-full rounded-lg shadow-md hidden",
-          isMe && "hidden"
+          "animate-opacity-show z-20 aspect-video w-full rounded-lg shadow-md"
         )}
       />
-      {isMe ? (
-        <Canvas style={{ height: 600 }} camera={{ fov: 25 }} shadows>
-          <ambientLight intensity={0.5} />
-          <pointLight
-            position={[10, 10, 10]}
-            color={new Color(1, 1, 0)}
-            intensity={0.5}
-            castShadow
-          />
-          <pointLight
-            position={[-10, 0, 10]}
-            color={new Color(1, 0, 0)}
-            intensity={0.5}
-            castShadow
-          />
-          <pointLight position={[0, 0, 10]} intensity={0.5} castShadow />
-          <Avatar url={url} />
-        </Canvas>
-      ) : null}
+      <Canvas style={{ height: 600 }} camera={{ fov: 25 }} shadows>
+        <ambientLight intensity={0.5} />
+        <pointLight
+          position={[10, 10, 10]}
+          color={new Color(1, 1, 0)}
+          intensity={0.5}
+          castShadow
+        />
+        <pointLight
+          position={[-10, 0, 10]}
+          color={new Color(1, 0, 0)}
+          intensity={0.5}
+          castShadow
+        />
+        <pointLight position={[0, 0, 10]} intensity={0.5} castShadow />
+        <Avatar url={url} />
+      </Canvas>
     </>
   );
 };

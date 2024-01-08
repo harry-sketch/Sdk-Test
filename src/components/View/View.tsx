@@ -21,12 +21,12 @@ const View: React.FC<ViewProps> = ({}) => {
 
   return (
     <div className="w-full">
-      <div className="w-full p-4 h-full flex flex-wrap">
+      <div className="">
         <LocalPeer />
 
-        {peerIds.map((peerId) => (
+        {/* {peerIds.map((peerId) => (
           <RemotePeer peerId={peerId} key={`remote-peer-${peerId}`} />
-        ))}
+        ))} */}
       </div>
     </div>
   );
