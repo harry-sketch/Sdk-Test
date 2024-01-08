@@ -1,3 +1,4 @@
+import { cn } from "@/utils/helpers";
 import {
   FaceLandmarker,
   FaceLandmarkerOptions,
@@ -151,26 +152,30 @@ const VideoCard: React.FC<Props> = ({ stream, isMe }) => {
         ref={videoRef}
         autoPlay
         muted
-        className="animate-opacity-show z-20 aspect-video w-full rounded-lg shadow-md"
+        className={cn(
+          "animate-opacity-show z-20 aspect-video w-full rounded-lg shadow-md hidden",
+          isMe && "hidden"
+        )}
       />
-
-      <Canvas style={{ height: 600 }} camera={{ fov: 25 }} shadows>
-        <ambientLight intensity={0.5} />
-        <pointLight
-          position={[10, 10, 10]}
-          color={new Color(1, 1, 0)}
-          intensity={0.5}
-          castShadow
-        />
-        <pointLight
-          position={[-10, 0, 10]}
-          color={new Color(1, 0, 0)}
-          intensity={0.5}
-          castShadow
-        />
-        <pointLight position={[0, 0, 10]} intensity={0.5} castShadow />
-        <Avatar url={url} />
-      </Canvas>
+      {isMe ? (
+        <Canvas style={{ height: 600 }} camera={{ fov: 25 }} shadows>
+          <ambientLight intensity={0.5} />
+          <pointLight
+            position={[10, 10, 10]}
+            color={new Color(1, 1, 0)}
+            intensity={0.5}
+            castShadow
+          />
+          <pointLight
+            position={[-10, 0, 10]}
+            color={new Color(1, 0, 0)}
+            intensity={0.5}
+            castShadow
+          />
+          <pointLight position={[0, 0, 10]} intensity={0.5} castShadow />
+          <Avatar url={url} />
+        </Canvas>
+      ) : null}
     </>
   );
 };

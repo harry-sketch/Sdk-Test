@@ -1,17 +1,12 @@
 import React, { useEffect } from "react";
 import LocalPeer from "../LocalPeer/LocalPeer";
 import RemotePeer from "../RemotePeer/RemotePeer";
-import {
-  useLocalAudio,
-  useLocalVideo,
-  usePeerIds,
-} from "@huddle01/react/hooks";
-import { Euler } from "three";
+import { useLocalVideo, usePeerIds } from "@huddle01/react/hooks";
 
 type ViewProps = {};
 
 const View: React.FC<ViewProps> = ({}) => {
-  // const { peerIds } = usePeerIds();
+  const { peerIds } = usePeerIds();
   const { enableVideo } = useLocalVideo();
 
   const handleVideo = async () => {
@@ -26,12 +21,12 @@ const View: React.FC<ViewProps> = ({}) => {
 
   return (
     <div className="w-full">
-      <div className="w-full p-4 h-full">
+      <div className="w-full p-4 h-full flex flex-wrap">
         <LocalPeer />
 
-        {/* {peerIds.map((peerId) => (
+        {peerIds.map((peerId) => (
           <RemotePeer peerId={peerId} key={`remote-peer-${peerId}`} />
-        ))} */}
+        ))}
       </div>
     </div>
   );
